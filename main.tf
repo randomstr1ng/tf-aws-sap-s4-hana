@@ -133,8 +133,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "ec2_instance" {
-# min Requirements: 4vCPU, 16GB RAM, 150GB Disk
-  instance_type          = "t3.2xlarge"
+  instance_type          = var.instance_type
   ami                    = data.aws_ami.ubuntu.id
   key_name               = var.keypair-id
   vpc_security_group_ids = [aws_security_group.security_group.id]
