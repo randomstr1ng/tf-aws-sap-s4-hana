@@ -11,7 +11,6 @@ echo \
 sudo apt-get update
 sudo apt-get -qy install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 # Setup SAP S/4 HANA 1909 Trial
-sudo docker pull sapse/abap-platform-trial:1909
 echo "$(ip r | grep default | cut -d " " -f 9) vhcala4hci vhcala4hci.dummy.nodomain" | sudo tee -a /etc/hosts
 # echo << EOF | sudo tee -a /etc/sysctl.d/10-abaptrial.conf
 # vm.max_map_count=2147483647
@@ -24,6 +23,7 @@ sudo chown -R ubuntu:ubuntu /opt/s4-hana-trial/
 wget https://raw.githubusercontent.com/randomstr1ng/tf-aws-sap-s4-hana/main/deployment-files/docker-compose.yaml -O /opt/s4-hana-trial/docker-compose.yaml
 echo "--- Placeholder ---" | tee -a /opt/s4-hana-trial/ASABAP_license
 echo "--- Placeholder ---" | tee -a /opt/s4-hana-trial/HDB_license
+sudo docker compose -f /opt/s4-hana-trial/docker-compose.yaml pull
 sudo docker compose -f /opt/s4-hana-trial/docker-compose.yaml up -d
 # transfer license update script
 pip3 install argparse
