@@ -24,4 +24,4 @@ output "sapcloudconnector_private_ip" {
 ```
 
 ## Links
-- [DockerHub ABAP Platform Trial](https://hub.docker.com/r/sapse/abap-platform-trial)
+- [DockerHub ABAP Platform Trial](https://hub.docker.com/r/sapse/abap-cloud-developer-trial)
