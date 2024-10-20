@@ -19,5 +19,5 @@ services:
         volumes:
             - /opt/s4-hana-trial/ASABAP_license:/opt/sap/ASABAP_license
             - /opt/s4-hana-trial/HDB_license:/opt/sap/HDB_license
-        image: sapse/abap-cloud-developer-trial:ABAPTRIAL_2022
+        image: sapse/abap-cloud-developer-trial:ABAPTRIAL_2022_SP01
         command: -agree-to-sap-license -skip-limits-check
